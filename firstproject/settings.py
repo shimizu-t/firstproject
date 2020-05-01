@@ -25,12 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
 
-ALLOWED_HOSTS = []
+
+
 
 
 # Application definition
@@ -135,7 +132,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 if not DEBUG:
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = 'awan3ut9+hhj^q(#v5vtmpwa*1@a39&g9^rasp19h23^#*n(xx'
     import django_heroku
     django_heroku.settings(locals())
 
@@ -147,3 +144,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
