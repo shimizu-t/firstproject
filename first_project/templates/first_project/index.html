@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Hello, World!</h1>
-<input type="button" value="fake">
+<h1>リマインダー</h1>
+<a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">ログイン</a>
+<a href="{% url 'first_project:signup' %}" role="button">サインアップ</a>
 {% endblock %}
