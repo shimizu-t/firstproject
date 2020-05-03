@@ -150,6 +150,6 @@ try:
 except ImportError:
     pass
 
-LOGIN_REDIRECT_URL = "first_project:home"
+LOGIN_REDIRECT_URL = "first_project:list"
 
 LOGOUT_REDIRECT_URL = "first_project:index"

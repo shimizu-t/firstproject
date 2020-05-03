@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p><h2>タイトル：{{ post.title }}</h2></p>
+  <p><h2>内容：{{ post.memo }}</h2></p><br>
+  <form method="post" action="{% url 'first_project:listdelete' post.pk %}">{% csrf_token %}
+   <button class="btn" type="submit" onclick='return confirm("本当に削除しますか？");'>削除</button>
+  </form>
+
+
+{% endblock content %}

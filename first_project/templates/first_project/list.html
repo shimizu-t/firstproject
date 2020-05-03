@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<h1>リマインドリスト</h1>
+<br>
+<a class="btn btn-primary btn-lg" href="{% url 'first_project:listcreate' %}" role="button">リスト作成</a>
+<br>
+  <p>-------------------</p>
+  {% for post in posts %}
+    <h2>タイトル：{{ post.title }}</h2><br>
+
+    <a class="btn btn-primary btn-lg" href="{% url 'first_project:listdetail' post.pk  %}" role="button">詳細</a>
+    <p>-------------------</p>
+    <br>
+    <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
+  {% endfor %}
+{% endblock content %}
