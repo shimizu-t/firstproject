@@ -55,3 +55,14 @@ def listdelete(request,pk):
     memo = get_object_or_404(Post,pk=pk)
     memo.delete()
     return redirect('first_project:list')
+
+def listupdate(request,pk):
+    memo = get_object_or_404(Post,pk=pk)
+    if request.method == 'POST':
+        form = PostForm(request.POST,instance=memo)
+        if form.is_valid():
+            form.save()
+            return redirect('first_project:list')
+    else:
+        form = PostForm(instance=memo)
+    return render(request,'first_project/listupdate.html',{'form':form,'memo':memo})

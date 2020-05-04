@@ -12,7 +12,8 @@
 
     <a class="btn btn-primary btn-lg" href="{% url 'first_project:listdetail' post.pk  %}" role="button">詳細</a>
     <p>-------------------</p>
-    <br>
-    <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
+
   {% endfor %}
+  <br>
+  <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
 {% endblock content %}

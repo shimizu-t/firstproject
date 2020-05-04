@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <a href="{% url 'first_project:listdetail' memo.pk %}">戻る</a><br>
+ <form action="{% url 'first_project:listupdate' memo.pk %}" method="POST">
+   {% csrf_token %}
+ {{ form.as_p }}
+ <button class="btn" type="submit">保存</button>
+</form>
+{% endblock %}

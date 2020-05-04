@@ -10,5 +10,6 @@ urlpatterns=[
     path('listcreate/',views.listcreate,name='listcreate'),
     path('listdetail/<int:pk>',views.listdetail,name='listdetail'),
     path('listdelete/<int:pk>',views.listdelete,name='listdelete'),
+    path('listupdate/<int:pk>',views.listupdate,name='listupdate'),
 
 ]
