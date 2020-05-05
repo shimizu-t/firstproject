@@ -11,5 +11,7 @@ urlpatterns=[
     path('listdetail/<int:pk>',views.listdetail,name='listdetail'),
     path('listdelete/<int:pk>',views.listdelete,name='listdelete'),
     path('listupdate/<int:pk>',views.listupdate,name='listupdate'),
+    path('userdetail/<int:pk>',views.UserDetailView.as_view(),name='userdetail'),
+    path('userdetail/<int:pk>/userupdate',views.UserUpdateView.as_view(),name='userupdate'),
 
 ]

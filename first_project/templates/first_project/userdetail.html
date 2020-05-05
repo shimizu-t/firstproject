@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>ユーザー詳細</h1>
+<br>
+ユーザー名：{{user.username}}
+<br>
+メールアドレス：{{user.email}}
+<br>
+<a class="btn btn-primary" href="{% url 'first_project:userupdate' user.pk  %}" role="button">メールアドレス設定</a> 
+{% endblock %}

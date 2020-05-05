@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, resolve_url
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Post
@@ -6,6 +6,9 @@ from .forms import PostForm
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.forms import User
+from django.views.generic import DetailView,UpdateView
+from .forms import UserForm
 # Create your views here.
 def index(request):
     return render(request,'first_project/index.html')
@@ -66,3 +69,15 @@ def listupdate(request,pk):
     else:
         form = PostForm(instance=memo)
     return render(request,'first_project/listupdate.html',{'form':form,'memo':memo})
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = 'first_project/userdetail.html'
+
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'first_project/userupdate.html'
+    form_class = UserForm
+
+    def get_success_url(self):
+        return resolve_url('first_project:userdetail',pk=self.kwargs['pk'])
