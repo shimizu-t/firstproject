@@ -15,7 +15,7 @@
 
   {% endfor %}
   <br>
-  
+  <a class="btn btn-primary btn-lg" href="{% url 'first_project:userdetail' user.pk  %}" role="button">ユーザー詳細</a>
   <br>
   <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
 {% endblock content %}
